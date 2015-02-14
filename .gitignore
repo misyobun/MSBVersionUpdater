@@ -24,3 +24,26 @@ proguard/
 
 # Log Files
 *.log
+
+# Abdriud Studio
+.idea
+*.iml
+*.ipr
+*.iws
+
+# mac
+.Trashes
+.DS_Store
+
+# Win
+Thumbs.db
+
+# Vim
+*.swp
+
+# Keystore
+*.keystore
+keystore.properties
+
+# Gradle
+.gradle
