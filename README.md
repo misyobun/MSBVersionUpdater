@@ -1,8 +1,12 @@
-This library is based on kazu0620’s SRGVersionUpdater which is iOS library. (https://github.com/kazu0620/SRGVersionUpdater)
+### This library is based on kazu0620’s SRGVersionUpdater which is iOS library. (https://github.com/kazu0620/SRGVersionUpdater)
+
+### Difference between SRGVersionUpdater
+if user cancel latest update, `MSBVersionUpdater` doesn't show again alert dialog unless required_version become latest.(When type is `optional')
+
 
 ## Usage
 
-### 1. Upload a JSON file below.
+### 1. Upload a JSON file below
 ```
 {"required_version":"2.7.6","type":"force","update_url":"https://play.google.com/store/apps/details?id=[APP_PACKAGE_NAME]”}
 ```
