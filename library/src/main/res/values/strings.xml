@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">versionUpdater</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="update_title">App updates</string>
+    <string name="force_update_title">App updates</string>
+    <string name="update_message">You can update latest app version. Could you update latest app??</string>
+    <string name="update_force_message">You can update latest app version. If you keep the old version , app might crash while you are using.</string>
+    <string name="update_ok">OK</string>
+    <string name="update_cancel">Cancel</string>
+
+</resources>
