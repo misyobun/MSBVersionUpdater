@@ -1,7 +1,7 @@
 ### This library is based on kazu0620’s SRGVersionUpdater which is iOS library. (https://github.com/kazu0620/SRGVersionUpdater)
 
 ### Difference between SRGVersionUpdater
-if user cancel latest update, `MSBVersionUpdater` doesn't show again alert dialog unless required_version become latest.(When type is `optional')
+if user cancel latest update, `MSBVersionUpdater` doesn't show again alert dialog unless required_version become latest.(When type is `optional`)
 
 
 ## Usage
