@@ -1,4 +1,4 @@
-This library is based on  kazu0620’s SRGVersionUpdater (iOS) ( https://github.com/kazu0620/SRGVersionUpdater )
+This library is based on kazu0620’s SRGVersionUpdater which is iOS library. (https://github.com/kazu0620/SRGVersionUpdater)
 
 ## Usage
 
