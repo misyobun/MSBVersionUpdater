@@ -1,3 +1,5 @@
+[ ![Download](https://api.bintray.com/packages/misyobun/maven/MSBVersionUpdater/images/download.svg) ](https://bintray.com/misyobun/maven/MSBVersionUpdater/_latestVersion)
+
 ### This library is based on kazu0620’s SRGVersionUpdater which is iOS library. (https://github.com/kazu0620/SRGVersionUpdater)
 
 ### Difference between SRGVersionUpdater
