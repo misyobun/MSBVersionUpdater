@@ -3,7 +3,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository url: "./rep/"
-            pom.version = "0.0.1"
+            pom.version = "0.0.6"
             pom.groupId = "jp.co.misyobun.lib.versionupdater"
             pom.artifactId = "msb-version-updater"
         }
