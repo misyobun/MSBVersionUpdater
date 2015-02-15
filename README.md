@@ -26,14 +26,52 @@ if user cancel latest update, `MSBVersionUpdater` doesn't show again alert dialo
 ```
 repositories {
         jcenter()
-        maven {
-            url 'http://misyobun.github.io/MSBVersionUpdater/repository/'
-        }
     }
 ```
 
 ```
 dependencies {
-    compile 'jp.co.misyobun.lib.versionupdater:msb-version-updater:0.0.6'
+    compile 'jp.co.misyobun.lib.versionupdater:versionupdater:1.0.0'
 }
+```
+
+### 3. implement below
+
+#### default
+```
+@Override
+public void onResume() {
+        super.onResume();
+        MSBVersionUpdater updater = new MSBVersionUpdater(this);
+        updater.setEndpoint("http://adhock.sakura.ne.jp/mo/update.json");
+        updater.executeVersionCheck();
+}
+```
+
+#### You can set Title and Message
+```
+    @Override
+    public void onResume() {
+        super.onResume();
+        MSBVersionUpdater updater = new MSBVersionUpdater(this);
+        updater.setEndpoint([json url]);
+        updater.setTitle([forceTitle]);
+        updater.setMessage([forceMessage]);
+        updater.executeVersionCheck();
+    }
+
+```
+
+#### You can set forceTitle and forceMessage
+```
+    @Override
+    public void onResume() {
+        super.onResume();
+        MSBVersionUpdater updater = new MSBVersionUpdater(this);
+        updater.setEndpoint([json url]);
+        updater.setForceTitle([forceTitle]);
+        updater.setForceMessage([forceMessage]);
+        updater.executeVersionCheck();
+    }
+
 ```
