@@ -1,1 +1,2 @@
-include ':library', ':sample'
+include ':sample', ':versionupdater'
+project(':versionupdater').projectDir = new File('msbversionupdater')
