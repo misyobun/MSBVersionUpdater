@@ -43,7 +43,7 @@ dependencies {
 public void onResume() {
         super.onResume();
         MSBVersionUpdater updater = new MSBVersionUpdater(this);
-        updater.setEndpoint("http://adhock.sakura.ne.jp/mo/update.json");
+        updater.setEndpoint([json url]);
         updater.executeVersionCheck();
 }
 ```
