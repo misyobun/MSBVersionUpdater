@@ -3,7 +3,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository url: "./rep/"
-            pom.version = "1.0.0"
+            pom.version = "1.0.1"
             pom.groupId = "jp.co.misyobun.lib.versionupdater"
             pom.artifactId = "msb-version-updater"
         }
@@ -35,14 +35,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.squareup.okhttp:okhttp:2.0.+'
     compile 'com.google.code.gson:gson:2.3.+'
-
 }
 
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 group = 'jp.co.misyobun.lib.versionupdater'
-version = '1.0.0'
+version = '1.0.1'
 def siteUrl = 'https://github.com/misyobun/MSBVersionUpdater'
 def gitUrl = 'https://github.com/misyobun/MSBVersionUpdater.git'
 
