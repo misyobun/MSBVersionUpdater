@@ -6,7 +6,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.text.TextUtils;
-
 import com.google.gson.Gson;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -177,23 +176,31 @@ public class MSBVersionUpdater {
 
         try {
 
-            PackageManager manager      = activity.getPackageManager();
-            PackageInfo packageInfo     = manager.getPackageInfo(activity.getPackageName(), 0);
-            String currentVersion       = packageInfo.versionName;
-            String requiredVersion      = updateInfo.required_version;
+            PackageManager manager        = activity.getPackageManager();
+            PackageInfo packageInfo       = manager.getPackageInfo(activity.getPackageName(), 0);
+            String currentVersion         = packageInfo.versionName;
+            String lastForceUpdateVersion = updateInfo.last_force_required_version;
+            String requiredVersion        = updateInfo.required_version;
 
-            int ret = versionCompare(currentVersion, requiredVersion);
+            int ret = versionCompare(currentVersion,lastForceUpdateVersion);
+            if (ret < 0){
+                // 過去の強制アップデートを有効にする
+                updateInfo.type = "force";
+                return true;
+            }
+            ret = versionCompare(currentVersion, requiredVersion);
             if (ret < 0) {
-                flag = true;
+
+                return true;
             }
 
         }catch (PackageManager.NameNotFoundException e) {
             flag = false;
-        }finally {
-            return flag;
         }
+        return flag;
 
     }
+
 
     /**
      * キャンセルしたバージョンよりも新しいバージョンかを判定

@@ -7,6 +7,9 @@ public class MSBUpdateInfo  {
 
     /** 強制アップデート */
     public static final String TYPE_FORCE = "force";
+
+    /** 前回の強制アップデートバージョン*/
+    public String last_force_required_version;
     /** 最新バージョン */
     public String required_version;
     /** 対象URL */
@@ -16,13 +19,18 @@ public class MSBUpdateInfo  {
 
     /**
      * コンストラクタ
+     * @param last_force_required_version
      * @param requiredVersion
      * @param updateUrl
      * @param type
      */
-    public MSBUpdateInfo(String requiredVersion, String updateUrl, String type) {
+    public MSBUpdateInfo(final String last_force_required_version,
+                         final String requiredVersion,
+                         final String updateUrl,
+                         final String type) {
         this.required_version = requiredVersion;
         this.update_url = updateUrl;
         this.type = type;
+        this.last_force_required_version = last_force_required_version;
     }
 }
