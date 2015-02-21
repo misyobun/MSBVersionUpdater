@@ -26,13 +26,13 @@
 
 ```
 repositories {
-        jcenter()
-    }
+    jcenter()
+}
 ```
 
 ```
 dependencies {
-    compile 'jp.co.misyobun.lib.versionupdater:versionupdater:1.0.1'
+    compile 'jp.co.misyobun.lib.versionupdater:versionupdater:1.1.0'
 }
 ```
 
