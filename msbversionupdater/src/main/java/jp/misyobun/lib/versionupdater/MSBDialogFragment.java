@@ -9,6 +9,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
 
 /**
  * Created by usr0600259 on 15/02/05.
@@ -57,6 +59,11 @@ public class MSBDialogFragment extends DialogFragment {
     private boolean dismissFlag;
 
 
+    /**
+     * optionalフラグ
+     */
+    private boolean isOptional = false;
+
 
     @Override
     public void onAttach(Activity activity) {
@@ -95,12 +102,14 @@ public class MSBDialogFragment extends DialogFragment {
         }
     }
 
+
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         String title = getForceTitle();
         String message = getForceMessage();
-        boolean isOptional = false;
+
 
         if (updateInfo.type.equals("optional")) {
             title = getTitle();
@@ -140,7 +149,10 @@ public class MSBDialogFragment extends DialogFragment {
             });
 
         } else {
-            this.setCancelable(false);
+            //this.setCancelable(false);
+
+            dialog.setOnKeyListener(onKeyListener);
+
         }
         return dialog.create();
     }
@@ -239,5 +251,21 @@ public class MSBDialogFragment extends DialogFragment {
         this.forceMessage = forceMessage;
     }
 
+
+    private Dialog.OnKeyListener onKeyListener = new Dialog.OnKeyListener(){
+        @Override
+        public boolean onKey(DialogInterface dialogInterface, int keyCode, KeyEvent event) {
+
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+                if (mActivity != null) {
+
+                    dialogInterface.dismiss();
+                    mActivity.finish();
+                }
+                return true;
+            }
+            return false;
+        }
+    };
 
 }
