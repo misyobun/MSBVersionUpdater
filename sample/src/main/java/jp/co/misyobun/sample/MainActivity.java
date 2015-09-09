@@ -22,7 +22,7 @@ public class MainActivity extends ActionBarActivity {
     public void onResume() {
         super.onResume();
         MSBVersionUpdater updater = new MSBVersionUpdater(this);
-        updater.setEndpoint("http://adhock.sakura.ne.jp/mo/update.json");
+        updater.setEndpoint("http://incompetence.kill.jp/ver/version.json");
         updater.executeVersionCheck();
     }
 
