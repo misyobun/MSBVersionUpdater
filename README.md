@@ -10,7 +10,7 @@
 
 ### 1. Upload a JSON file below
 ```
-{"last_force_required_version":"1.0.0","required_version":"1.0.0","type":"optional","update_url":"https://play.google.com/store/apps/details?id=misyobun.com.regardstoblackjack"}
+{"last_force_required_version":"1.0.0","required_version":"1.1.0","type":"optional","update_url":"https://play.google.com/store/apps/details?id=misyobun.com.regardstoblackjack"}
 ```
 
 | key | define |
