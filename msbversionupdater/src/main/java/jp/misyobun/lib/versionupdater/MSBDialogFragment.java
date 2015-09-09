@@ -17,6 +17,8 @@ import android.view.View;
  */
 public class MSBDialogFragment extends DialogFragment {
 
+    public static final String UPDATE_INFO = "update_info";
+
     public static final String TAG = "msb_update_confirm";
 
     public static final String OPTIONAL_CANCEL_FLAG_TAG = "OPTIONAL_CANCEL_FLAG_TAG";
@@ -110,6 +112,7 @@ public class MSBDialogFragment extends DialogFragment {
         String title = getForceTitle();
         String message = getForceMessage();
 
+        updateInfo = (MSBUpdateInfo)getArguments().get(UPDATE_INFO);
 
         if (updateInfo.type.equals("optional")) {
             title = getTitle();
@@ -149,7 +152,8 @@ public class MSBDialogFragment extends DialogFragment {
             });
 
         } else {
-            //this.setCancelable(false);
+
+            this.setCancelable(false);
 
             dialog.setOnKeyListener(onKeyListener);
 
@@ -171,21 +175,6 @@ public class MSBDialogFragment extends DialogFragment {
         return  packageName;
     }
 
-    /**
-     * 更新情報のゲッター
-     * @return
-     */
-    public MSBUpdateInfo getUpdateInfo() {
-        return updateInfo;
-    }
-
-    /**
-     * 更新情報のセッター
-     * @param updateInfo
-     */
-    public void setUpdateInfo(MSBUpdateInfo updateInfo) {
-        this.updateInfo = updateInfo;
-    }
 
     /**
      * ダイアログタイトルのゲッター

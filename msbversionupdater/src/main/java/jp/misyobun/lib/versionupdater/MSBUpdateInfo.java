@@ -1,9 +1,11 @@
 package jp.misyobun.lib.versionupdater;
 
+import java.io.Serializable;
+
 /**
  * Created by usr0600259 on 15/02/05.
  */
-public class MSBUpdateInfo  {
+public class MSBUpdateInfo  implements Serializable{
 
     /** 強制アップデート */
     public static final String TYPE_FORCE = "force";

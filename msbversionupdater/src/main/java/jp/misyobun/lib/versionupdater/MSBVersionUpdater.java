@@ -5,6 +5,7 @@ import android.app.FragmentTransaction;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.os.Bundle;
 import android.text.TextUtils;
 import com.google.gson.Gson;
 import com.squareup.okhttp.OkHttpClient;
@@ -267,7 +268,9 @@ public class MSBVersionUpdater {
         updateAnnounce.setMessage(getMessage());
         updateAnnounce.setForceTitle(getForceTitle());
         updateAnnounce.setForceMessage(getForceMessage());
-        updateAnnounce.setUpdateInfo(updateInfo);
+        Bundle args = new Bundle();
+        args.putSerializable(MSBDialogFragment.UPDATE_INFO,updateInfo);
+        updateAnnounce.setArguments(args);
         FragmentTransaction transaction =  activity.getFragmentManager().beginTransaction();
         transaction.add(updateAnnounce,MSBDialogFragment.TAG);
         transaction.commitAllowingStateLoss();
