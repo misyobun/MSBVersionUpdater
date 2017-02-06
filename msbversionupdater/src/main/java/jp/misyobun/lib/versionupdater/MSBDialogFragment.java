@@ -9,8 +9,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
-import android.view.View;
 
 /**
  * Created by usr0600259 on 15/02/05.
@@ -66,6 +66,9 @@ public class MSBDialogFragment extends DialogFragment {
      */
     private boolean isOptional = false;
 
+    private String positiveButtonText;
+
+    private String negativeButtonText;
 
     @Override
     public void onAttach(Activity activity) {
@@ -111,6 +114,12 @@ public class MSBDialogFragment extends DialogFragment {
 
         String title = getForceTitle();
         String message = getForceMessage();
+        String positiveButtonText =
+                TextUtils.isEmpty(getPositiveButtonText()) ? getString(R.string.update_ok)
+                        : getPositiveButtonText();
+        String negativeButtonText =
+                TextUtils.isEmpty(getNegativeButtonText()) ? getString(R.string.update_cancel)
+                        : getPositiveButtonText();
 
         updateInfo = (MSBUpdateInfo)getArguments().get(UPDATE_INFO);
 
@@ -123,7 +132,7 @@ public class MSBDialogFragment extends DialogFragment {
         AlertDialog.Builder dialog =  new AlertDialog.Builder(mActivity)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton(R.string.update_ok, new DialogInterface.OnClickListener() {
+                .setPositiveButton(positiveButtonText, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
@@ -142,7 +151,7 @@ public class MSBDialogFragment extends DialogFragment {
 
         if (isOptional) {
 
-            dialog.setNegativeButton(R.string.update_cancel, new DialogInterface.OnClickListener(){
+            dialog.setNegativeButton(negativeButtonText, new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -156,7 +165,6 @@ public class MSBDialogFragment extends DialogFragment {
             this.setCancelable(false);
 
             dialog.setOnKeyListener(onKeyListener);
-
         }
         return dialog.create();
     }
@@ -240,6 +248,27 @@ public class MSBDialogFragment extends DialogFragment {
         this.forceMessage = forceMessage;
     }
 
+    /**
+     * Set positiveButtonText
+     */
+    public void setPositiveButtonText(String positiveButtonText) {
+        this.positiveButtonText = positiveButtonText;
+    }
+
+    public String getPositiveButtonText() {
+        return positiveButtonText;
+    }
+
+    /**
+     * Set negativeButtonText
+     */
+    public void setNegativeButtonText(String negativeButtonText) {
+        this.negativeButtonText = negativeButtonText;
+    }
+
+    public String getNegativeButtonText() {
+        return negativeButtonText;
+    }
 
     private Dialog.OnKeyListener onKeyListener = new Dialog.OnKeyListener(){
         @Override

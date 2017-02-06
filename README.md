@@ -76,3 +76,19 @@ public void onResume() {
     }
 
 ```
+
+#### You can set text of button positive and negative
+   ```
+       @Override
+       public void onResume() {
+           super.onResume();
+           MSBVersionUpdater updater = new MSBVersionUpdater(this);
+           updater.setEndpoint([json url]);
+           updater.setForceTitle([forceTitle]);
+           updater.setForceMessage([forceMessage]);
+           updater.setPositiveButtonText([positiveButtonText]);
+           updater.setNegativeButtonText([negativeButtonText]);
+           updater.executeVersionCheck();
+       }
+
+   ```

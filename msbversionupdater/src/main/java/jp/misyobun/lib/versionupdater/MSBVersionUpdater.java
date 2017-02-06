@@ -59,6 +59,10 @@ public class MSBVersionUpdater {
      */
     private MSBUpdateInfo updateInfo;
 
+    private String positiveButtonText;
+
+    private String negativeButtonText;
+
     /**
      * コンンストラクタ
      * @param activity
@@ -268,6 +272,8 @@ public class MSBVersionUpdater {
         updateAnnounce.setMessage(getMessage());
         updateAnnounce.setForceTitle(getForceTitle());
         updateAnnounce.setForceMessage(getForceMessage());
+        updateAnnounce.setPositiveButtonText(getPositiveButtonText());
+        updateAnnounce.setNegativeButtonText(getNegativeButtonText());
         Bundle args = new Bundle();
         args.putSerializable(MSBDialogFragment.UPDATE_INFO,updateInfo);
         updateAnnounce.setArguments(args);
@@ -348,4 +354,37 @@ public class MSBVersionUpdater {
         this.forceMessage = forceMessage;
     }
 
+    /**
+     * Set positive button text
+     *
+     * @param positiveButtonText
+     */
+    public void setPositiveButtonText(String positiveButtonText) {
+        this.positiveButtonText = positiveButtonText;
+    }
+
+    /**
+     *
+     * @return positiveButtonText
+     */
+    public String getPositiveButtonText() {
+        return positiveButtonText;
+    }
+
+    /**
+     * Set negative button text
+     *
+     * @param negativeButtonText
+     */
+    public void setNegativeButtonText(String negativeButtonText) {
+        this.negativeButtonText = negativeButtonText;
+    }
+
+    /**
+     *
+     * @return negativeButtonText
+     */
+    public String getNegativeButtonText() {
+        return negativeButtonText;
+    }
 }
