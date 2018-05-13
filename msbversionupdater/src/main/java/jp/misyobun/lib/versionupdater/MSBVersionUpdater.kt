@@ -21,19 +21,19 @@ class MSBVersionUpdater
 (
     private val activity: AppCompatActivity?) {
 
-    private var title: String? = null
-
-    private var message: String? = null
-
-    private var forceTitle: String? = null
-
-    private var forceMessage: String? = null
-
-    private var positiveButtonText: String? = null
-
-    private var negativeButtonText: String? = null
-
     private lateinit var updateInfo: MSBUpdateInfo
+
+    var title: String? = null
+
+    var message: String? = null
+
+    var forceTitle: String? = null
+
+    var forceMessage: String? = null
+
+    var positiveButtonText: String? = null
+
+    var negativeButtonText: String? = null
 
     var endpoint: String? = null
 
