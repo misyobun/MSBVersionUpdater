@@ -40,55 +40,53 @@ dependencies {
 
 #### default
 ```
-@Override
-public void onResume() {
-        super.onResume();
-        MSBVersionUpdater updater = new MSBVersionUpdater(this);
-        updater.setEndpoint([json url]);
-        updater.executeVersionCheck();
-}
+    public override fun onResume() {
+        super.onResume()
+        val updater = MSBVersionUpdater(this)
+        updater.endpoint = "http://incompetence.kill.jp/ver/version.json"
+        updater.executeVersionCheck()
+    }
 ```
 
 #### You can set Title and Message
 ```
-    @Override
-    public void onResume() {
-        super.onResume();
-        MSBVersionUpdater updater = new MSBVersionUpdater(this);
-        updater.setEndpoint([json url]);
-        updater.setTitle([forceTitle]);
-        updater.setMessage([forceMessage]);
-        updater.executeVersionCheck();
+    public override fun onResume() {
+        super.onResume()
+        val updater = MSBVersionUpdater(this)
+        updater.endpoint = "http://incompetence.kill.jp/ver/version.json"
+        updater.title = "[title]"
+        updater.message = "[message]"
+        updater.executeVersionCheck()
     }
-
 ```
 
 #### You can set forceTitle and forceMessage
 ```
-    @Override
-    public void onResume() {
-        super.onResume();
-        MSBVersionUpdater updater = new MSBVersionUpdater(this);
-        updater.setEndpoint([json url]);
-        updater.setForceTitle([forceTitle]);
-        updater.setForceMessage([forceMessage]);
-        updater.executeVersionCheck();
+    public override fun onResume() {
+        super.onResume()
+        val updater = MSBVersionUpdater(this)
+        updater.endpoint = "http://incompetence.kill.jp/ver/version.json"
+        updater.title = "[title]"
+        updater.message = "[message]"
+        updater.forceTitle = "[forceTitle]"
+        updater.forceMessage = "[forceMessage]"
+        updater.executeVersionCheck()
     }
 
 ```
 
 #### You can set text of button positive and negative
-   ```
-       @Override
-       public void onResume() {
-           super.onResume();
-           MSBVersionUpdater updater = new MSBVersionUpdater(this);
-           updater.setEndpoint([json url]);
-           updater.setForceTitle([forceTitle]);
-           updater.setForceMessage([forceMessage]);
-           updater.setPositiveButtonText([positiveButtonText]);
-           updater.setNegativeButtonText([negativeButtonText]);
-           updater.executeVersionCheck();
-       }
-
-   ```
+```
+    public override fun onResume() {
+        super.onResume()
+        val updater = MSBVersionUpdater(this)
+        updater.endpoint = "http://incompetence.kill.jp/ver/version.json"
+        updater.title = "[title]"
+        updater.message = "[message]"
+        updater.forceTitle = "[forceTitle]"
+        updater.forceMessage = "[forceMessage]"
+        updater.positiveButtonText = "[positiveButtonText]"
+        updater.negativeButtonText = "[negativeButtonText]"
+        updater.executeVersionCheck()
+    }
+```
