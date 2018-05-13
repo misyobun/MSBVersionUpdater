@@ -32,7 +32,7 @@ repositories {
 
 ```
 dependencies {
-    compile 'jp.co.misyobun.lib.versionupdater:versionupdater:1.3.0'
+    compile 'jp.co.misyobun.lib.versionupdater:versionupdater:1.4.0'
 }
 ```
 
