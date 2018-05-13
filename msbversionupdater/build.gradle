@@ -6,7 +6,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository url: "./rep/"
-            pom.version = "1.4.0"
+            pom.version = "1.4.2"
             pom.groupId = "jp.co.misyobun.lib.versionupdater"
             pom.artifactId = "msb-version-updater"
         }
@@ -46,7 +46,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 group = 'jp.co.misyobun.lib.versionupdater'
-version = '1.4.0'
+version = '1.4.2'
 def siteUrl = 'https://github.com/misyobun/MSBVersionUpdater'
 def gitUrl = 'https://github.com/misyobun/MSBVersionUpdater.git'
 
@@ -108,9 +108,12 @@ task sourcesJar(type: Jar) {
 }
 
 task javadoc(type: Javadoc) {
-    excludes = ['**/*.kt']
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+tasks.withType(Javadoc).all {
+    enabled = false
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
