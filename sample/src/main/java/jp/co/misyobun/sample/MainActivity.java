@@ -1,21 +1,20 @@
 package jp.co.misyobun.sample;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import jp.misyobun.lib.versionupdater.MSBVersionUpdater;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
     }
 
     @Override
@@ -24,8 +23,8 @@ public class MainActivity extends ActionBarActivity {
         MSBVersionUpdater updater = new MSBVersionUpdater(this);
         updater.setEndpoint("http://incompetence.kill.jp/ver/version.json");
         updater.executeVersionCheck();
-    }
 
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
