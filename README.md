@@ -43,7 +43,7 @@ dependencies {
     public override fun onResume() {
         super.onResume()
         val updater = MSBVersionUpdater(this)
-        updater.endpoint = "http://incompetence.kill.jp/ver/version.json"
+        updater.endpoint = "[json url]"
         updater.executeVersionCheck()
     }
 ```
@@ -53,7 +53,7 @@ dependencies {
     public override fun onResume() {
         super.onResume()
         val updater = MSBVersionUpdater(this)
-        updater.endpoint = "http://incompetence.kill.jp/ver/version.json"
+        updater.endpoint = "[json url]"
         updater.title = "[title]"
         updater.message = "[message]"
         updater.executeVersionCheck()
@@ -65,7 +65,7 @@ dependencies {
     public override fun onResume() {
         super.onResume()
         val updater = MSBVersionUpdater(this)
-        updater.endpoint = "http://incompetence.kill.jp/ver/version.json"
+        updater.endpoint = "[json url]"
         updater.title = "[title]"
         updater.message = "[message]"
         updater.forceTitle = "[forceTitle]"
@@ -80,7 +80,7 @@ dependencies {
     public override fun onResume() {
         super.onResume()
         val updater = MSBVersionUpdater(this)
-        updater.endpoint = "http://incompetence.kill.jp/ver/version.json"
+        updater.endpoint = "[json url]"
         updater.title = "[title]"
         updater.message = "[message]"
         updater.forceTitle = "[forceTitle]"
