@@ -74,7 +74,7 @@ class MSBDialogFragment : DialogFragment() {
         negativeButtonText = if (TextUtils.isEmpty(negativeButtonText))
             getString(R.string.update_cancel)
         else
-            positiveButtonText
+            negativeButtonText
 
         var title = arguments?.getString("forceTitle")
         var message = arguments?.getString("forceMessage")
