@@ -49,44 +49,52 @@ dependencies {
 ```
 
 #### You can set Title and Message
+
 ```
     public override fun onResume() {
         super.onResume()
         val updater = MSBVersionUpdater(this)
         updater.endpoint = "[json url]"
-        updater.title = "[title]"
-        updater.message = "[message]"
+        updater.title = "[title]" // Notice
+        updater.message = "[message]" // Yout can update new version!
         updater.executeVersionCheck()
     }
 ```
+
+ <img src="https://user-images.githubusercontent.com/509448/40065331-7bb24396-589c-11e8-832a-578284dee49a.png" width=320/>
+
 
 #### You can set forceTitle and forceMessage
+
 ```
     public override fun onResume() {
         super.onResume()
         val updater = MSBVersionUpdater(this)
         updater.endpoint = "[json url]"
-        updater.title = "[title]"
-        updater.message = "[message]"
-        updater.forceTitle = "[forceTitle]"
-        updater.forceMessage = "[forceMessage]"
+        updater.forceTitle = "[forceTitle]" // App updates
+        updater.forceMessage = "[forceMessage]" // You can update latest app version. If you keep the old version , app might crash while you are using.
         updater.executeVersionCheck()
     }
 
 ```
+
+ <img src="https://user-images.githubusercontent.com/509448/40065297-704ea38c-589c-11e8-981c-e8a3029a2ddc.png" width=320/>
+
 
 #### You can set text of button positive and negative
+
 ```
     public override fun onResume() {
         super.onResume()
         val updater = MSBVersionUpdater(this)
         updater.endpoint = "[json url]"
-        updater.title = "[title]"
-        updater.message = "[message]"
-        updater.forceTitle = "[forceTitle]"
-        updater.forceMessage = "[forceMessage]"
-        updater.positiveButtonText = "[positiveButtonText]"
-        updater.negativeButtonText = "[negativeButtonText]"
+        updater.title = "[title]" // Notice
+        updater.message = "[message]" // Yout can update new version!
+        updater.positiveButtonText = "[positiveButtonText]" // OK!!
+        updater.negativeButtonText = "[negativeButtonText]" // CANCEL!!
         updater.executeVersionCheck()
     }
 ```
+
+ <img src="https://user-images.githubusercontent.com/509448/40065316-75eef044-589c-11e8-85fe-fe4035d0ac3f.png" width=320/>
+
