@@ -6,7 +6,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository url: "./rep/"
-            pom.version = "1.4.2"
+            pom.version = "1.4.3"
             pom.groupId = "jp.co.misyobun.lib.versionupdater"
             pom.artifactId = "msb-version-updater"
         }
@@ -21,7 +21,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 4
-        versionName "1.4.2"
+        versionName "1.4.3"
     }
     buildTypes {
         release {
@@ -34,19 +34,13 @@ android {
     }
 }
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.squareup.okhttp:okhttp:2.7.5'
-    implementation 'com.google.code.gson:gson:2.8.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
+
 
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 group = 'jp.co.misyobun.lib.versionupdater'
-version = '1.4.2'
+version = '1.4.3'
 def siteUrl = 'https://github.com/misyobun/MSBVersionUpdater'
 def gitUrl = 'https://github.com/misyobun/MSBVersionUpdater.git'
 
@@ -93,6 +87,21 @@ install {
                     developerConnection 'https://github.com/misyobun/MSBVersionUpdater.git'
                     url siteUrl
                 }
+                dependencies {
+                    dependency {
+                        groupId 'com.google.code.gson'
+                        artifactId 'gson'
+                        version '2.8.2'
+                        scope 'implementation'
+                    }
+                    dependency {
+                        groupId 'com.squareup.okhttp'
+                        artifactId 'okhttp'
+                        version '2.7.5'
+                        scope 'implementation'
+                    }
+
+                }
             }
         }
     }
@@ -100,6 +109,10 @@ install {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 task sourcesJar(type: Jar) {
