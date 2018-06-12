@@ -224,7 +224,9 @@ class MSBVersionUpdater
             args.putString("negativeButtonText", negativeButtonText)
             args.putSerializable(MSBDialogFragment.UPDATE_INFO, it)
             updateAnnounce.arguments = args
-            updateAnnounce.show(theActivity.supportFragmentManager, MSBDialogFragment.TAG)
+            val transaction = theActivity.supportFragmentManager.beginTransaction()
+            transaction.add(updateAnnounce, MSBDialogFragment.TAG)
+            transaction.commitAllowingStateLoss()
         }
     }
 }
